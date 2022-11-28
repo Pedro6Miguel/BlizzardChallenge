@@ -1,6 +1,7 @@
 import './index.css'
 import Hero from './pages/main/Hero/Hero'
 import Games from './pages/main/Games/Games'
+import Down from './pages/main/Download/Down'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Hero />
       <Games />
+      <Down />
     </div>
   )
 }
