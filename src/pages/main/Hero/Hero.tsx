@@ -21,7 +21,7 @@ function Hero() {
   return (
     <div className='font-medium'>
         <img src={sliderData.imge} alt="" className='relative w-full h-[736px] object-cover'/>
-        <div id='teste' className='absolute top-0 left-0'></div>
+        <div id='lightning' className='absolute top-0 left-0'></div>
 
         <nav className='absolute top-0 left-0 flex w-full h-20 items-center border-b-[2px] border-nav'>
             <div className='flex ml-52'>
