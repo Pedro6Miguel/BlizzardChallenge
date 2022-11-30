@@ -7,7 +7,6 @@ export interface ListData {
     description: string;
     button: string;
   }
-  
 
 export const LIST_DATA: ListData[] = [
     {

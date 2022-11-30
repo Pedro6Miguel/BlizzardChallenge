@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@iconscout/react-unicons": "^1.1.6",
+    "@tanstack/react-query": "^4.18.0",
+    "axios": "^1.2.0",
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.5",
     "react": "^18.2.0",
