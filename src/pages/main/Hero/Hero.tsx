@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './Hero.scss'
+import "../../../../node_modules/video-react/dist/video-react.css";
 
+import { Player } from 'video-react'
 import { LIST_DATA, ListData } from './data';
 
-import Banner from '../../../../public/Banner.png'
 import BlizzardLogo from '../../../../public/BlizzardLogo.png'
-import DiabloBanner from '../../../../public/DiabloBanner.png'
+import VideoSrc from '../../../../public/Mask.mp4'
 
 import { UilAngleDown, UilUser } from '@iconscout/react-unicons'
 
@@ -13,17 +14,19 @@ function Hero() {
 
   const [sliderData, setSliderData] = useState(LIST_DATA[0])
 
-  const handleClick = (id) => {
+  const handleClick = (id:any) => {
     const slider=LIST_DATA[id]
     setSliderData(slider)
   }
+
+  // Videos //
 
   return (
     <div className='font-medium'>
         <img src={sliderData.imge} alt="" className='relative w-full h-[736px] object-cover'/>
         <div id='lightning' className='absolute top-0 left-0'></div>
 
-        <nav className='absolute top-0 left-0 flex w-full h-20 items-center border-b-[2px] border-nav'>
+        <nav className='absolute top-0 left-0 flex w-full h-28 items-center border-b-[2px] border-nav'>
             <div className='flex ml-52'>
             <img src={BlizzardLogo} alt="" />
                 <ul className='flex gap-10 pl-32 items-center text-white'>
@@ -56,10 +59,13 @@ function Hero() {
 
             <div className='absolute mr-52 right-0 flex flex-col gap-28'>
                 <img src={sliderData.logo} alt="" />
-                <div>
+                <div className='flex flex-col items-end'>
                     <p className='text-end uppercase pb-3 font-normal'>Assista o trailer</p>
-                    <div className='w-[300px] h-[180px] bg-blue'>
-                        Colocar aqui o Trailer
+                    <div className='w-[300px] h-[180px]'>
+                    <Player
+                        poster="https://media.cnn.com/api/v1/images/stellar/prod/221129095912-02-portugal-ronaldo-goal-fernandes-112822.jpg?c=16x9&q=h_270,w_480,c_fill"
+                        src={VideoSrc}
+                    />
                     </div>
                 </div>
             </div>

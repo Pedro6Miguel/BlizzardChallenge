@@ -6,6 +6,8 @@ import Playstation from '../../../../public/Playstation.png'
 import Nintendo from '../../../../public/Nintendo.png'
 import Xbox from '../../../../public/Xbox.png'
 import Dots from '../../../../public/GamesSVG.svg'
+import BlizzardLogo from '../../../../public/BlizzardLogo.png'
+import WhiteDots from '../../../../public/WhiteDots.png'
 
 import {useQuery} from '@tanstack/react-query'
 import Axios from 'axios'
@@ -42,21 +44,24 @@ function Games() {
             </div>
         </div>
 
-        <div className='grid grid-cols-4 gap-20 pt-[100px]'>
+        <div className='grid grid-cols-4 gap-12 pt-[100px]'>
           {data?.map((game) => ( 
             <div className='relative'>
-              <img className='w-[100%] h-[422px]' src={game.image} alt="" />
-              <div className='absolute top-0' id='game'></div>
-              <img className='absolute bottom-[120px] right-[50%] translate-x-[50%]' src={game.logo} alt="" />
+              <div className='w-[340px] h-[422px] border border-indigo-600 truncate'>
+                <img id='image' className='w-[340px] h-[422px] object-cover hover:scale-110 ease-in duration-100' src={game.image} alt="" />
+                <img className='absolute bottom-[120px] right-[50%] translate-x-[50%]' src={game.logo} alt="" />
+              </div>
               <h5 className='text-[20px] font-semibold pt-4'>{game.name}</h5>
               <p className='text-[15px] text-category opacity-80 pt-1 font-normal'>{game.name}</p>
             </div>
           ))}    
-          <div className='border border-indigo-600'>
-              <img className='w-[100%] h-[422px]' src="" alt="" />
-              <h5 className='text-[20px] font-semibold pt-4'>sdsadsadasd</h5>
-              <p className='text-[15px] text-category opacity-80 pt-1 font-normal'>asdasdsadsad</p>
+          <div className='border-[2px] border-gray-800 rounded-[4px] h-[422px] flex flex-col justify-center items-center'>
+            <img src={BlizzardLogo} alt="" />
+            <div className='flex items-center pt-12 gap-4'>
+              <img className='w-[9.9px] h-[9.9px]' src={WhiteDots} alt="" />
+              <p className='text-[20px] font-semibold'>Ver todos jogos</p>
             </div>
+          </div>
         </div>
     </div>
   )
