@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Down.scss'
 
-import MainBg from '../../../../public/Main.png'
-import SecondaryBg from '../../../../public/Secondary.png'
-import BattlenetLogo from '../../../../public/BattleLg.png'
-import Icon1 from '../../../../public/Icon1.png'
-import Icon2 from '../../../../public/Icon2.png'
-import Icon3 from '../../../../public/Icon3.png'
-import Phone from '../../../../public/Phone.png'
+import MainBg from '/Main.png'
+import SecondaryBg from '/Secondary.png'
+import BattlenetLogo from '/BattleLg.png'
+import Icon1 from '/Icon1.png'
+import Icon2 from '/Icon2.png'
+import Icon3 from '/Icon3.png'
+import Phone from '/Phone.png'
 
 function Down() {
 

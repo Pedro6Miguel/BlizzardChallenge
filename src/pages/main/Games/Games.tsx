@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Games.scss'
 
-import Battle from '../../../../public/Battlenet.png'
-import Playstation from '../../../../public/Playstation.png'
-import Nintendo from '../../../../public/Nintendo.png'
-import Xbox from '../../../../public/Xbox.png'
-import Dots from '../../../../public/GamesSVG.svg'
-import BlizzardLogo from '../../../../public/BlizzardLogo.png'
-import WhiteDots from '../../../../public/WhiteDots.png'
+import Battle from '/Battlenet.png'
+import Playstation from '/Playstation.png'
+import Nintendo from '/Nintendo.png'
+import Xbox from '/Xbox.png'
+import Dots from '/GamesSVG.svg'
+import BlizzardLogo from '/BlizzardLogo.png'
+import WhiteDots from '/WhiteDots.png'
 
 import {useQuery} from '@tanstack/react-query'
 import Axios from 'axios'
