@@ -2,15 +2,22 @@ import React, { useState } from 'react';
 import './Hero.scss'
 
 import { LIST_DATA, ListData } from './data';
-import { GAMES_DROPDOWN, GamesDropdown } from './gamesDropdown';
+import { GAMES_DROPDOWN, GamesDropdown } from './data';
+import { ESPORTS_DROPDOWN, EsportsDropdown } from './data';
 
 import BlizzardLogo from '/BlizzardLogo.png'
+import BlueDots from '/BlueDots.png'
+import Chat from '/Chat.png'
+import DownloadIcon from '/DownloadIcon.png'
+import LogoIcon from '/LogoIcon.png'
+import Tournaments from '/Tournaments.png'
 
 import { UilAngleDown, UilUser } from '@iconscout/react-unicons'
 
 function Hero() {
 
   const [open, setOpen] = useState(false)
+  const [esportsOpen, setEsportsOpen] = useState(false)
 
   // -- //
 
@@ -31,23 +38,37 @@ function Hero() {
             <img src={BlizzardLogo} alt="" />
                 <ul className='flex gap-10 pl-32 items-center text-white'>
                     <li className='flex' onClick={() => {setOpen(!open)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
-                    <div className={open ? 'bg-blue absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
+                    <div id='gradient' className={open ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-6 gap-[100px]'>
                             {GAMES_DROPDOWN.map((data, i) =>(
                                 <div className='flex flex-col'>
-                                <img className='border-4 border-indigo-600' src={data.image} alt="" />
+                                <img src={data.image} alt="" />
                                 <p>Nome jogo</p>
                                 </div>
                             ))}
                         </div>
-                        <div className='w-[100%] h-[90px] bg-indigo-900 absolute bottom-[-16%] flex items-center justify-center gap-32'>
-                            <li>Ver todos jogos</li>
-                            <li>Aplicativo Battle.net</li>
-                            <li>Downloads</li>
-                            <li>Fóruns dos jogos</li>
+                        <div className='w-[100%] h-[90px] bg-dropdown absolute bottom-[-16%] flex items-center justify-center gap-32'>
+                            <li className='flex items-center gap-4'><img className='w-[10px] h-[10px]' src={BlueDots} alt="" /> Ver todos jogos</li>
+                            <li className='flex items-center gap-4'><img src={LogoIcon} alt="" /> Aplicativo Battle.net</li>
+                            <li className='flex items-center gap-4'><img className='w-[22px] h-[22px]' src={DownloadIcon} alt="" /> Downloads</li>
+                            <li className='flex items-center gap-4'><img src={Chat} alt="" /> Fóruns dos jogos</li>
                         </div>
                     </div>
-                    <li className='flex'>Esports <UilAngleDown /></li>
+                    <li className='flex' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span className={esportsOpen ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
+                    <div id='gradient' className={esportsOpen ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
+                        <div className='grid grid-cols-6 gap-[100px]'>
+                            {GAMES_DROPDOWN.map((data, i) =>(
+                                <div className='flex flex-col'>
+                                <img src={data.image} alt="" />
+                                <p>Nome jogo</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div className='w-[100%] h-[90px] bg-dropdown absolute bottom-[-16%] flex items-center justify-center gap-32'>
+                            <li className='flex items-center gap-3'><img className='' src={Tournaments} alt="" />Torneios da comunidade</li>
+                        </div>
+                    </div>
+                    {/*<li className='flex' onClick={() => {setOpen(false)}}>Esports <UilAngleDown /></li>*/}
                     <li>Loja</li>
                     <li>Notícias</li>
                     <li>Suporte</li>

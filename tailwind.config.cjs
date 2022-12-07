@@ -11,7 +11,8 @@ module.exports = {
         'blue': '#00AEFF',
         'nav': '#FFFFFF33',
         'costumGrey': '#8F9199',
-        'category': '#E5E5E5'
+        'category': '#E5E5E5',
+        'dropdown': '#15171B'
       }
     },
   },

@@ -10,7 +10,7 @@
 
 :root {
   --blue: #00AEFF;
-  --white: #fff
+  --white: #fff;
 }
 
 button {
@@ -21,4 +21,8 @@ button {
 
 li {
   list-style: none;
+}
+
+#gradient {
+  background: linear-gradient(180deg, #020203 0%, rgba(14, 17, 23) 96.35%, rgba(14, 17, 23) 100%);
 }
