@@ -47,7 +47,7 @@ function Games() {
         <div className='grid grid-cols-4 gap-12 pt-[100px]'>
           {data?.map((game) => ( 
             <div className='relative'>
-              <div className='w-[340px] h-[422px] border border-indigo-600 truncate'>
+              <div className='w-[340px] h-[422px] truncate'>
                 <img id='image' className='w-[340px] h-[422px] object-cover hover:scale-110 ease-in duration-100' src={game.image} alt="" />
                 <img className='absolute bottom-[120px] right-[50%] translate-x-[50%]' src={game.logo} alt="" />
               </div>

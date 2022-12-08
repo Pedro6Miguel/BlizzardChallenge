@@ -37,13 +37,13 @@ function Hero() {
             <div className='flex ml-52'>
             <img src={BlizzardLogo} alt="" />
                 <ul className='flex gap-10 pl-32 items-center text-white'>
-                    <li className='flex' onClick={() => {setOpen(!open)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
+                    <li className='flex' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
                     <div id='gradient' className={open ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-6 gap-[100px]'>
                             {GAMES_DROPDOWN.map((data, i) =>(
-                                <div className='flex flex-col'>
-                                <img src={data.image} alt="" />
-                                <p>Nome jogo</p>
+                                <div className='flex flex-col items-center gap-[10px]'>
+                                    <img className='h-[80px] w-[80px]' src={data.image} alt="" />
+                                    <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
                                 </div>
                             ))}
                         </div>
@@ -56,11 +56,11 @@ function Hero() {
                     </div>
                     <li className='flex' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span className={esportsOpen ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
                     <div id='gradient' className={esportsOpen ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
-                        <div className='grid grid-cols-6 gap-[100px]'>
-                            {GAMES_DROPDOWN.map((data, i) =>(
-                                <div className='flex flex-col'>
-                                <img src={data.image} alt="" />
-                                <p>Nome jogo</p>
+                        <div className='grid grid-cols-5 gap-[100px]'>
+                            {ESPORTS_DROPDOWN.map((data, i) =>(
+                                <div className='flex flex-col items-center gap-[10px]'>
+                                    <img src={data.image} alt="" />
+                                    <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
                                 </div>
                             ))}
                         </div>
@@ -68,7 +68,6 @@ function Hero() {
                             <li className='flex items-center gap-3'><img className='' src={Tournaments} alt="" />Torneios da comunidade</li>
                         </div>
                     </div>
-                    {/*<li className='flex' onClick={() => {setOpen(false)}}>Esports <UilAngleDown /></li>*/}
                     <li>Loja</li>
                     <li>Notícias</li>
                     <li>Suporte</li>
