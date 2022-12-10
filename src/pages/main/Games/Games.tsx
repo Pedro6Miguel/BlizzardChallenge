@@ -26,7 +26,7 @@ function Games() {
   })
 
   return (
-    <div className='px-52 py-[100px] bg-black text-white'>
+    <div className='px-52 py-[100px] bg-black text-white max-lg:px-28'>
         <div className='flex justify-between items-end'>
             <div className='flex gap-44'>
                 <p className='pt-2 uppercase text-costumGrey'>Games</p>
@@ -44,10 +44,10 @@ function Games() {
             </div>
         </div>
 
-        <div className='grid grid-cols-4 gap-12 pt-[100px]'>
+        <div className='grid grid-cols-4 gap-6 pt-[80px]'>
           {data?.map((game) => ( 
-            <div className='relative'>
-              <div className='w-[340px] h-[422px] truncate'>
+            <div className='relative pt-[20px]'>
+              <div className='truncate'>
                 <img id='image' className='w-[340px] h-[422px] object-cover hover:scale-110 ease-in duration-100' src={game.image} alt="" />
                 <img className='absolute bottom-[120px] right-[50%] translate-x-[50%]' src={game.logo} alt="" />
               </div>

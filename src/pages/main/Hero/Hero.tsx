@@ -34,7 +34,7 @@ function Hero() {
         <div id='lightning' className='absolute top-0 left-0'></div>
 
         <nav className='absolute top-0 left-0 flex w-full h-28 items-center border-b-[2px] border-nav'>
-            <div className='flex ml-52'>
+            <div className='flex ml-52 max-lg:ml-28'>
             <img src={BlizzardLogo} alt="" />
                 <ul className='flex gap-10 pl-32 items-center text-white'>
                     <li className='flex' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
@@ -73,14 +73,14 @@ function Hero() {
                     <li>Suporte</li>
                 </ul>
             </div>
-            <ul className='flex gap-10 absolute right-0 mr-52 text-white'>
+            <ul className='flex gap-10 absolute right-0 mr-52 text-white max-lg:mr-28'>
                 <button>Criar conta</button>
                 <button className='flex gap-2 items-center bg-blue border-blue'><UilUser size="20"/> Logar</button>
             </ul>
         </nav>
 
         <div className='absolute top-20 left-0 text-white w-full h-[656px] flex items-center'>
-            <div className='ml-52 flex flex-col gap-6'>
+            <div className='ml-52 flex flex-col gap-6 max-lg:ml-28'>
             {LIST_DATA.map((data, i) =>(
                 <img className={sliderData.id==i ? "" : "grayscale"} key={data.id} src={data.icon} onClick={() => handleClick(i)} alt="" />
             ))}
@@ -93,7 +93,7 @@ function Hero() {
                 <button className='flex flex-row gap-2 w-auto mt-3 bg-blue border-blue'><UilUser />{sliderData.button}</button>
             </div>
 
-            <div className='absolute mr-52 right-0 flex flex-col gap-28'>
+            <div className='absolute mr-52 right-0 flex flex-col gap-28 max-lg:mr-28'>
                 <img src={sliderData.logo} alt="" />
                 <div className='flex flex-col items-end'>
                     <p className='text-end uppercase pb-3 font-normal'>Assista o trailer</p>
