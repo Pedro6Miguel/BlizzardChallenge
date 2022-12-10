@@ -48,7 +48,7 @@ function Games() {
           {data?.map((game) => ( 
             <div className='relative pt-[20px]'>
               <div className='truncate'>
-                <img id='image' className='w-[340px] h-[422px] object-cover hover:scale-110 ease-in duration-100' src={game.image} alt="" />
+                <img id='image' className='w-[340px] h-[422px] object-cover hover:scale-110 ease-in duration-100 max-lg:h-[350px]' src={game.image} alt="" />
                 <img className='absolute bottom-[120px] right-[50%] translate-x-[50%]' src={game.logo} alt="" />
               </div>
               <h5 className='text-[20px] font-semibold pt-4'>{game.name}</h5>
