@@ -35,42 +35,42 @@ function Hero() {
 
         <nav className={esportsOpen || open ? 'absolute top-0 left-0 flex w-full h-28 items-center border-b-[2px] border-nav bg-dropnav' : 'absolute top-0 left-0 flex w-full h-28 items-center border-b-[2px] border-nav'}>
             <div className='flex ml-52 max-lg:ml-28'>
-                <img src={BlizzardLogo} alt="" />
+                <a href=""><img src={BlizzardLogo} alt="" /></a>
                 <ul className='flex gap-10 pl-32 items-center text-white'>
-                    <li className='flex' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
+                    <li className='flex cursor-pointer' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}>{open ? <UilAngleDown color="#00AEFF"/> : <UilAngleDown />}</span></li>
                     <div id='gradient' className={open ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-6 gap-[100px]'>
                             {GAMES_DROPDOWN.map((data, i) =>(
-                                <div className='flex flex-col items-center gap-[10px]'>
+                                <div className='flex flex-col items-center gap-[10px] cursor-pointer'>
                                     <img className='h-[80px] w-[80px]' src={data.image} alt="" />
                                     <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
                                 </div>
                             ))}
                         </div>
                         <div className='w-[100%] h-[90px] bg-dropdown absolute bottom-[-16%] flex items-center justify-center gap-32'>
-                            <li className='flex items-center gap-4'><img className='w-[10px] h-[10px]' src={BlueDots} alt="" /> Ver todos jogos</li>
-                            <li className='flex items-center gap-4'><img src={LogoIcon} alt="" /> Aplicativo Battle.net</li>
-                            <li className='flex items-center gap-4'><img className='w-[22px] h-[22px]' src={DownloadIcon} alt="" /> Downloads</li>
-                            <li className='flex items-center gap-4'><img src={Chat} alt="" /> Fóruns dos jogos</li>
+                            <li className='flex items-center gap-4 cursor-pointer'><img className='w-[10px] h-[10px]' src={BlueDots} alt="" /> Ver todos jogos</li>
+                            <li className='flex items-center gap-4 cursor-pointer'><img src={LogoIcon} alt="" /> Aplicativo Battle.net</li>
+                            <li className='flex items-center gap-4 cursor-pointer'><img className='w-[22px] h-[22px]' src={DownloadIcon} alt="" /> Downloads</li>
+                            <li className='flex items-center gap-4 cursor-pointer'><img src={Chat} alt="" /> Fóruns dos jogos</li>
                         </div>
                     </div>
-                    <li className='flex' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span className={esportsOpen ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
+                    <li className='flex cursor-pointer' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span className={esportsOpen ? 'rotate-180 transition-all' : 'transition-all'}>{esportsOpen ? <UilAngleDown color="#00AEFF"/> : <UilAngleDown />}</span></li>
                     <div id='gradient' className={esportsOpen ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-5 gap-[100px]'>
                             {ESPORTS_DROPDOWN.map((data, i) =>(
-                                <div className='flex flex-col items-center gap-[10px]'>
+                                <div className='flex flex-col items-center gap-[10px] cursor-pointer'>
                                     <img src={data.image} alt="" />
                                     <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
                                 </div>
                             ))}
                         </div>
                         <div className='w-[100%] h-[90px] bg-dropdown absolute bottom-[-16%] flex items-center justify-center gap-32'>
-                            <li className='flex items-center gap-3'><img className='' src={Tournaments} alt="" />Torneios da comunidade</li>
+                            <li className='flex items-center gap-3 cursor-pointer'><img className='' src={Tournaments} alt="" />Torneios da comunidade</li>
                         </div>
                     </div>
-                    <li>Loja</li>
-                    <li>Notícias</li>
-                    <li>Suporte</li>
+                    <li className='cursor-pointer'>Loja</li>
+                    <li className='cursor-pointer'>Notícias</li>
+                    <li className='cursor-pointer'>Suporte</li>
                 </ul>
             </div>
             <ul className='flex gap-10 absolute right-0 mr-52 text-white max-lg:mr-28'>
@@ -82,7 +82,7 @@ function Hero() {
         <div className='absolute top-20 left-0 text-white w-full h-[656px] flex items-center'>
             <div className='ml-52 flex flex-col gap-6 max-lg:ml-28'>
             {LIST_DATA.map((data, i) =>(
-                <img className={sliderData.id==i ? "" : "grayscale"} key={data.id} src={data.icon} onClick={() => handleClick(i)} alt="" />
+                <img className={sliderData.id==i ? "" : "grayscale cursor-pointer"} key={data.id} src={data.icon} onClick={() => handleClick(i)} alt="" />
             ))}
             
             </div>
