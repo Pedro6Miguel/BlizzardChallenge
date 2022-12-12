@@ -40,11 +40,11 @@ function Games() {
             </div>
             <div className='flex gap-2 pb-2'>
                 <img className='max-w-[10px]' src={Dots} alt="" />
-                <p className='text-blue font-semibold'>Ver todos os jogos</p>
+                <p className='text-blue font-semibold cursor-pointer'>Ver todos os jogos</p>
             </div>
         </div>
 
-        <div className='grid grid-cols-4 gap-6 pt-[80px]'>
+        <div className='grid grid-cols-4 gap-6 pt-[80px] cursor-pointer'>
           {data?.map((game) => ( 
             <div className='relative pt-[20px]'>
               <div className='truncate'>
