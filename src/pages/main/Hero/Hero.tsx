@@ -33,9 +33,9 @@ function Hero() {
         <img src={sliderData.imge} alt="" className='relative w-full h-[736px] object-cover'/>
         <div id='lightning' className='absolute top-0 left-0'></div>
 
-        <nav className='absolute top-0 left-0 flex w-full h-28 items-center border-b-[2px] border-nav'>
+        <nav className={esportsOpen || open ? 'absolute top-0 left-0 flex w-full h-28 items-center border-b-[2px] border-nav bg-dropnav' : 'absolute top-0 left-0 flex w-full h-28 items-center border-b-[2px] border-nav'}>
             <div className='flex ml-52 max-lg:ml-28'>
-            <img src={BlizzardLogo} alt="" />
+                <img src={BlizzardLogo} alt="" />
                 <ul className='flex gap-10 pl-32 items-center text-white'>
                     <li className='flex' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}><UilAngleDown /></span></li>
                     <div id='gradient' className={open ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>

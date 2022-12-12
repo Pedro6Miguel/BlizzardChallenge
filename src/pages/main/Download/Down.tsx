@@ -12,7 +12,7 @@ import Phone from '/Phone.png'
 function Down() {
 
   return (
-    <div id='bg' className='px-52 text-white h-[852px] flex items-center justify-between'>
+    <div id='bg' className='pl-52 pr-24 text-white h-[852px] flex items-center justify-between max-lg:pl-28 max-lg:pr-0'>
         <div>
             <img src={BattlenetLogo} alt="" />
             <h4 className='text-[32px] font-bold py-6'>Baixe agora o battle.net</h4>
@@ -27,7 +27,7 @@ function Down() {
                 <p>Também disponível como <span className='underline'><br></br>aplicativo móvel</span></p>
             </div>
         </div>
-        <div className='relative'>
+        <div id='responsiveness'>
             <img className='' src={MainBg} alt="" />
             <img className='absolute bottom-0 right-[50%] translate-x-[50%]' src={SecondaryBg} alt="" />
         </div>

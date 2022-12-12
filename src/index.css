@@ -8,6 +8,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --blue: #00AEFF;
   --white: #fff;

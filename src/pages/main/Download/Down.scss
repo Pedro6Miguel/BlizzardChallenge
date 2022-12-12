@@ -1,3 +1,53 @@
 #bg {
     background-image: url("/Bg.png");
+
+    #responsiveness {
+        position: absolute;
+        right: 100px;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    #bg {
+
+        #responsiveness {
+            right: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 1620px) {
+    #bg {
+
+        #responsiveness {
+            right: -100px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    #bg {
+
+        #responsiveness {
+            right: -200px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1320px) {
+    #bg {
+
+        #responsiveness {
+            right: -300px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1210px) {
+    #bg {
+
+        #responsiveness {
+            right: -500px;
+        }
+    }
 }

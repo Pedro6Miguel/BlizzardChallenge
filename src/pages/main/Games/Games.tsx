@@ -55,7 +55,7 @@ function Games() {
               <p className='text-[15px] text-category opacity-80 pt-1 font-normal'>{game.name}</p>
             </div>
           ))}    
-          <div className='border-[2px] border-gray-800 rounded-[4px] h-[422px] flex flex-col justify-center items-center'>
+          <div className='border-[2px] mt-[20px] border-gray-800 rounded-[4px] h-[422px] flex flex-col justify-center items-center max-lg:h-[350px]'>
             <img src={BlizzardLogo} alt="" />
             <div className='flex items-center pt-12 gap-4'>
               <img className='w-[9.9px] h-[9.9px]' src={WhiteDots} alt="" />
