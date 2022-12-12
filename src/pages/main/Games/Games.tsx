@@ -26,13 +26,13 @@ function Games() {
   })
 
   return (
-    <div className='px-52 py-[100px] bg-black text-white max-lg:px-28'>
+    <div className='px-52 py-[100px] bg-black text-white max-lg:px-28 max-sm:px-12 max-xxs:px-4 max-xxs:py-[50px]'>
         <div className='flex justify-between items-end'>
             <div className='flex gap-44'>
-                <p className='pt-2 uppercase text-costumGrey'>Games</p>
-                <h3 className='text-[32px] font-bold'>Jogos<br></br> exclusivos</h3>
+                <p className='pt-2 uppercase text-costumGrey max-md:hidden'>Games</p>
+                <h3 className='text-[32px] font-bold max-xs:text-[28px]'>Jogos<br></br> exclusivos</h3>
             </div>
-            <div className='flex gap-6 pb-2'>
+            <div className='flex gap-6 pb-2 max-xs:hidden'>
                 <li><img src={Battle} alt="" /></li>
                 <li><img src={Nintendo} alt="" /></li>
                 <li><img src={Playstation} alt="" /></li>
@@ -44,12 +44,12 @@ function Games() {
             </div>
         </div>
 
-        <div className='grid grid-cols-4 gap-6 pt-[80px] cursor-pointer'>
+        <div className='grid grid-cols-4 gap-6 pt-[80px] cursor-pointer max-md:grid-cols-3 max-xs:grid-cols-2 max-xxs:pt-[40px]'>
           {data?.map((game) => ( 
             <div className='relative pt-[20px]'>
               <div className='truncate'>
-                <img id='image' className='w-[340px] h-[422px] object-cover hover:scale-110 ease-in duration-100 max-lg:h-[350px]' src={game.image} alt="" />
-                <img className='absolute bottom-[120px] right-[50%] translate-x-[50%]' src={game.logo} alt="" />
+                <img id='image' className='w-[340px] h-[422px] object-cover hover:scale-110 ease-in duration-100 max-lg:h-[350px] max-xxs:h-[280px]' src={game.image} alt="" />
+                <img className='absolute bottom-[120px] right-[50%] translate-x-[50%] max-sm:h-[90px] max-xxs:hidden' src={game.logo} alt="" />
               </div>
               <h5 className='text-[20px] font-semibold pt-4'>{game.name}</h5>
               <p className='text-[15px] text-category opacity-80 pt-1 font-normal'>{game.name}</p>

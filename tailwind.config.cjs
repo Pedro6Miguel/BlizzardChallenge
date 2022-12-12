@@ -18,10 +18,10 @@ module.exports = {
       }
     },
     screens: {
-      'sm': '768px',
-
+      'xxs': '560px',
+      'xs': '800px',
+      'sm': '980px',
       'md': '1320px',
-
       'lg': '1440px',
     },
   },
