@@ -1,5 +1,33 @@
+#burger {
+    display: none;
+}
+
 #lightning {
     width: 100%;
     height: 736px;
     background: linear-gradient(rgb(46, 46, 46, 0.1), rgb(20, 20, 20));
+}
+
+@media only screen and (max-width: 1250px) {
+    #video {
+        padding-top: 98px;
+    }
+}
+
+@media only screen and (max-width: 1319px) {
+    #burger {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    #video {
+        p {
+            display: none;
+        }
+
+        #vm {
+            margin-top: 40px;
+        }
+    }
 }
