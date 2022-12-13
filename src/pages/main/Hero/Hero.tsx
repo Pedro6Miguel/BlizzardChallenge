@@ -89,7 +89,7 @@ function Hero() {
                 <span onClick={() => {setNavOpen(!navOpen)}} id='burger' className='mr-28 cursor-pointer pt-[4px]'>{navOpen ? <UilTimes color="#fff" size={40}/> : <UilBars color="#fff" size={40}/>}</span>     
             </div>
         </nav>
-        <div id='gradient' className={navOpen ? 'text-white absolute top-0 w-[100%] h-[656px] mt-28 z-10 flex flex-col justify-center gap-16 items-center' : 'hidden'}>
+        <div id='gradient' className={navOpen ? 'text-white absolute top-0 w-[100%] h-[656px] mt-28 z-10 flex flex-col justify-center gap-16 items-center md:hidden' : 'hidden'}>
             <li className='flex cursor-pointer' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}>{open ? <UilAngleDown color="#00AEFF"/> : <UilAngleDown />}</span></li>
                     <div id='gradient' className={open ? 'absolute top-0 left-0 h-[656px] w-[100%] z-10 flex pt-[100px] items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-6 gap-[100px]'>
