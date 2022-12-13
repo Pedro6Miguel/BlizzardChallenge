@@ -11,6 +11,8 @@ import Chat from '/Chat.png'
 import DownloadIcon from '/DownloadIcon.png'
 import LogoIcon from '/LogoIcon.png'
 import Tournaments from '/Tournaments.png'
+import PlayBtn from '/PlayBtn.png'
+
 
 import { UilAngleDown, UilUser, UilBars, UilTimes } from '@iconscout/react-unicons'
 
@@ -19,6 +21,7 @@ function Hero() {
   const [open, setOpen] = useState(false)
   const [esportsOpen, setEsportsOpen] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
+  const [hoverVideo, setHoverVideo] = useState(false)
 
   // -- //
 
@@ -74,11 +77,17 @@ function Hero() {
                     <li className='cursor-pointer'>Suporte</li>
                 </ul>
             </div>
-            <ul className='flex gap-10 absolute right-0 mr-52 text-white max-lg:mr-28 max-md:hidden'>
+            <ul className='flex gap-4 absolute right-0 mr-52 text-white max-lg:mr-28 max-md:hidden'>
                 <button>Criar conta</button>
                 <button className='flex gap-2 items-center bg-blue border-blue'><UilUser size="20"/> Logar</button>
             </ul>
-            <div onClick={() => {setNavOpen(!navOpen)}} id='burger' className='mr-28 cursor-pointer'>{navOpen ? <UilTimes color="#fff" size={40}/> : <UilBars color="#fff" size={40}/>}</div>
+            <div className='flex gap-12 md:hidden text-white'>
+                <ul className='flex gap-4'>
+                    <button>Criar conta</button>
+                    <button className='flex gap-2 items-center bg-blue border-blue'><UilUser size="20"/> Logar</button>
+                </ul>
+                <span onClick={() => {setNavOpen(!navOpen)}} id='burger' className='mr-28 cursor-pointer pt-[4px]'>{navOpen ? <UilTimes color="#fff" size={40}/> : <UilBars color="#fff" size={40}/>}</span>     
+            </div>
         </nav>
         <div id='gradient' className={navOpen ? 'text-white absolute top-0 w-[100%] h-[656px] mt-28 z-10 flex flex-col justify-center gap-16 items-center' : 'hidden'}>
             <li className='flex cursor-pointer' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}>{open ? <UilAngleDown color="#00AEFF"/> : <UilAngleDown />}</span></li>
@@ -133,10 +142,11 @@ function Hero() {
 
             <div className='absolute mr-52 right-0 flex flex-col gap-28 max-lg:mr-28'>
                 <img id='logo' src={sliderData.logo} alt="" />
-                <div id='video' className='flex flex-col items-end'>
-                    <p className='text-end uppercase pb-3 font-normal'>Assista o trailer</p>
-                    <div id='vm' className='w-[300px] h-[180px] bg-blue'>
-                    
+                <div onMouseEnter={() => {setHoverVideo(false)}} onMouseLeave={() => {setHoverVideo(true)}} id='video' className='flex flex-col items-end'>
+                    <p className='text-end uppercase pb-3 font-normal'>Assista o trailer</p>        
+                    <iframe src={sliderData.gif} scrolling="no" height="200px" width="300px" title="description"></iframe>
+                    <div className='w-[300px] h-[200px] absolute bottom-0 flex items-center justify-center'>
+                        <a href={sliderData.trailer} target="_blank"><img className={hoverVideo ? "hidden" : ""} src={PlayBtn} alt="" /></a>
                     </div>
                 </div>
             </div>
