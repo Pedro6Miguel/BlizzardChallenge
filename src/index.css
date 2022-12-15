@@ -23,6 +23,10 @@ button {
   border-radius: 3px;
 }
 
+input {
+  border-radius: 3px;
+}
+
 li {
   list-style: none;
 }

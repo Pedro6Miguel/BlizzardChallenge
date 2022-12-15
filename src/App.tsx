@@ -13,7 +13,7 @@ function App() {
       <QueryClientProvider client={client}>
         <Hero />
         <Games />
-        <Down />
+        {/*<Down />*/}
       </QueryClientProvider>
     </div>
   )

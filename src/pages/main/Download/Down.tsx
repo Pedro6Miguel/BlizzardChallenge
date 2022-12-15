@@ -12,7 +12,7 @@ import Phone from '/Phone.png'
 function Down() {
 
   return (
-    <div id='bg' className='pl-52 pr-24 text-white h-[852px] flex items-center justify-between max-lg:pl-28 max-lg:pr-0 max-sm:px-12'>
+    <div id='bg' className='pl-52 pr-24 text-white h-[852px] flex items-center justify-between max-lg:pl-28 max-lg:pr-0 max-sm:px-12 max-xxs:px-4'>
         <div>
             <img src={BattlenetLogo} alt="" />
             <h4 className='text-[32px] font-bold py-6'>Baixe agora o battle.net</h4>
