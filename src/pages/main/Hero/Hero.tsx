@@ -50,7 +50,7 @@ function Hero() {
                     <div id='gradient' className={open ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-6 gap-[100px]'>
                             {GAMES_DROPDOWN.map((data, i) =>(
-                                <div className='flex flex-col items-center gap-[10px] cursor-pointer'>
+                                <div key={data.id} className='flex flex-col items-center gap-[10px] cursor-pointer'>
                                     <img className='h-[80px] w-[80px]' src={data.image} alt="" />
                                     <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
                                 </div>
@@ -67,7 +67,7 @@ function Hero() {
                     <div id='gradient' className={esportsOpen ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-5 gap-[100px]'>
                             {ESPORTS_DROPDOWN.map((data, i) =>(
-                                <div className='flex flex-col items-center gap-[10px] cursor-pointer'>
+                                <div key={data.id} className='flex flex-col items-center gap-[10px] cursor-pointer'>
                                     <img src={data.image} alt="" />
                                     <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
                                 </div>
@@ -99,7 +99,7 @@ function Hero() {
                     <div id='gradient' className={open ? 'absolute top-0 left-0 h-[656px] w-[100%] z-10 flex pt-[100px] items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-6 gap-[100px]'>
                             {GAMES_DROPDOWN.map((data, i) =>(
-                                <div className='flex flex-col items-center gap-[10px] cursor-pointer'>
+                                <div key={data.id} className='flex flex-col items-center gap-[10px] cursor-pointer'>
                                     <img className='h-[80px] w-[80px]' src={data.image} alt="" />
                                     <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
                                 </div>
@@ -116,7 +116,7 @@ function Hero() {
                     <div id='gradient' className={esportsOpen ? 'absolute top-0 left-0 h-[656px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-5 gap-[100px]'>
                             {ESPORTS_DROPDOWN.map((data, i) =>(
-                                <div className='flex flex-col items-center gap-[10px] cursor-pointer pb-[80px]'>
+                                <div key={data.id} className='flex flex-col items-center gap-[10px] cursor-pointer pb-[80px]'>
                                     <img src={data.image} alt="" />
                                     <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
                                 </div>
@@ -135,7 +135,7 @@ function Hero() {
         <div className='absolute top-20 left-0 text-white w-full h-[656px] flex items-center max-[830px]:flex-col-reverse max-[830px]:top-[0px] max-[830px]:gap-12 max-[830px]:left-[-100px] max-[830px]:ml-12 max-[660px]:top-[-50px] max-[660px]:left-[-70px]'>
             <div className='ml-52 flex flex-col gap-6 max-lg:ml-28 max-sm:ml-12 max-[830px]:flex-row max-[830px]:ml-[-16px]'>
             {LIST_DATA.map((data, i) =>(
-                <img className={sliderData.id==i ? "" : "grayscale cursor-pointer"} key={data.id} src={data.icon} onClick={() => handleClick(i)} alt="" />
+                <img key={data.id} className={sliderData.id==i ? "" : "grayscale cursor-pointer"} key={data.id} src={data.icon} onClick={() => handleClick(i)} alt="" />
             ))}
             
             </div>
