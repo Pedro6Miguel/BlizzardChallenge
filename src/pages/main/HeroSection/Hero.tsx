@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import './Hero.scss'
 
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+
 import { LIST_DATA, ListData } from './data';
 import { GAMES_DROPDOWN, GamesDropdown } from './data';
 import { ESPORTS_DROPDOWN, EsportsDropdown } from './data';
+
+import ArrowVector from '/ArrowVector.png'
+import ArrowVectorBlue from '/ArrowVectorBlue.png'
+import CreateVector from '/CreateVector.png'
 
 import BattleLg from '/BattleLg.png'
 import BlizzardLogo from '/BlizzardLogo.png'
@@ -13,12 +19,11 @@ import DownloadIcon from '/DownloadIcon.png'
 import LogoIcon from '/LogoIcon.png'
 import Tournaments from '/Tournaments.png'
 import PlayBtn from '/PlayBtn.png'
+
 import GoogleForm from '/GoogleForm.png'
 import AppleForm from '/AppleForm.png'
 import FaceForm from '/FaceForm.png'
 import CloseForm from '/CloseForm.png'
-
-import { UilAngleDown, UilUser, UilBars, UilTimes } from '@iconscout/react-unicons'
 
 function Hero() {
 
@@ -46,7 +51,7 @@ function Hero() {
             <div className='flex ml-52 max-lg:ml-28 max-sm:ml-12'>
                 <a href=""><img src={BlizzardLogo} alt="" /></a>
                 <ul className='flex gap-10 pl-32 items-center text-white max-md:hidden'>
-                    <li className='flex cursor-pointer' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}>{open ? <UilAngleDown color="#00AEFF"/> : <UilAngleDown />}</span></li>
+                    <li className='flex cursor-pointer items-center gap-2' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos<span>{open ? <img src={ArrowVectorBlue} alt="" /> : <img src={ArrowVector} alt="" />}</span></li>
                     <div id='gradient' className={open ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-6 gap-[100px]'>
                             {GAMES_DROPDOWN.map((data, i) =>(
@@ -63,7 +68,7 @@ function Hero() {
                             <li className='flex items-center gap-4 cursor-pointer'><img src={Chat} alt="" /> Fóruns dos jogos</li>
                         </div>
                     </div>
-                    <li className='flex cursor-pointer' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span className={esportsOpen ? 'rotate-180 transition-all' : 'transition-all'}>{esportsOpen ? <UilAngleDown color="#00AEFF"/> : <UilAngleDown />}</span></li>
+                    <li className='flex cursor-pointer items-center gap-2' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span><span>{esportsOpen ? <img src={ArrowVectorBlue} alt="" /> : <img src={ArrowVector} alt="" />}</span></span></li>
                     <div id='gradient' className={esportsOpen ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-5 gap-[100px]'>
                             {ESPORTS_DROPDOWN.map((data, i) =>(
@@ -84,18 +89,18 @@ function Hero() {
             </div>
             <ul className='flex gap-4 absolute right-0 mr-52 text-white max-lg:mr-28 max-md:hidden'>
                 <button onClick={() => {setOpenForm(true)}}>Criar conta</button>
-                <button onClick={() => {setOpenForm(true)}} className='flex gap-2 items-center bg-blue border-blue'><UilUser size="20"/> Logar</button>
+                <button onClick={() => {setOpenForm(true)}} className='flex gap-2 items-center bg-blue border-blue'><img src={CreateVector} alt="" />Logar</button>
             </ul>
             <div className='flex gap-12 md:hidden text-white'>
                 <ul className='flex gap-4 max-[590px]:hidden'>
                     <button onClick={() => {setOpenForm(true)}}>Criar conta</button>
-                    <button onClick={() => {setOpenForm(true)}} className='flex gap-2 items-center bg-blue border-blue'><UilUser size="20"/> Logar</button>
+                    <button onClick={() => {setOpenForm(true)}} className='flex gap-2 items-center bg-blue border-blue'><img src={CreateVector} alt="" />Logar</button>
                 </ul>
-                <span onClick={() => {setNavOpen(!navOpen)}} id='burger' className='z-20 mr-28 cursor-pointer pt-[4px] max-sm:mr-12'>{navOpen ? <UilTimes color="#fff" size={40}/> : <UilBars color="#fff" size={40}/>}</span>     
+                <span onClick={() => {setNavOpen(!navOpen)}} id='burger' className='mt-1 z-20 mr-28 cursor-pointer pt-[4px] max-sm:mr-12'>{!navOpen ? <RxHamburgerMenu size={32} /> : <RxCross1 size={32} />}</span>     
             </div>
         </nav>
         <div id='gradient' className={navOpen ? 'text-white absolute top-0 w-[100%] h-[656px] mt-28 z-10 flex flex-col justify-center gap-16 items-center md:hidden' : 'hidden'}>
-            <li className='flex cursor-pointer' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}>{open ? <UilAngleDown color="#00AEFF"/> : <UilAngleDown />}</span></li>
+            <li className='flex cursor-pointer items-center gap-2' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}>{esportsOpen ? <img src={ArrowVectorBlue} alt="" /> : <img src={ArrowVector} alt="" />}</span></li>
                     <div id='gradient' className={open ? 'absolute top-0 left-0 h-[656px] w-[100%] z-10 flex pt-[100px] items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-6 gap-[100px]'>
                             {GAMES_DROPDOWN.map((data, i) =>(
@@ -112,7 +117,7 @@ function Hero() {
                             <li className='flex items-center gap-4 cursor-pointer'><img src={Chat} alt="" /> Fóruns dos jogos</li>
                         </div>
                     </div>
-                    <li className='flex cursor-pointer' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span className={esportsOpen ? 'rotate-180 transition-all' : 'transition-all'}>{esportsOpen ? <UilAngleDown color="#00AEFF"/> : <UilAngleDown />}</span></li>
+                    <li className='flex cursor-pointer items-center gap-2' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span className={esportsOpen ? 'rotate-180 transition-all' : 'transition-all'}>{esportsOpen ? <img src={ArrowVectorBlue} alt="" /> : <img src={ArrowVector} alt="" />}</span></li>
                     <div id='gradient' className={esportsOpen ? 'absolute top-0 left-0 h-[656px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
                         <div className='grid grid-cols-5 gap-[100px]'>
                             {ESPORTS_DROPDOWN.map((data, i) =>(
@@ -135,7 +140,7 @@ function Hero() {
         <div className='absolute top-20 left-0 text-white w-full h-[656px] flex items-center max-[830px]:flex-col-reverse max-[830px]:top-[0px] max-[830px]:gap-12 max-[830px]:left-[-100px] max-[830px]:ml-12 max-[660px]:top-[-50px] max-[660px]:left-[-70px]'>
             <div className='ml-52 flex flex-col gap-6 max-lg:ml-28 max-sm:ml-12 max-[830px]:flex-row max-[830px]:ml-[-16px]'>
             {LIST_DATA.map((data, i) =>(
-                <img key={data.id} className={sliderData.id==i ? "" : "grayscale cursor-pointer"} key={data.id} src={data.icon} onClick={() => handleClick(i)} alt="" />
+                <img key={data.id} className={sliderData.id==i ? "" : "grayscale cursor-pointer"} src={data.icon} onClick={() => handleClick(i)} alt="" />
             ))}
             
             </div>
@@ -144,7 +149,7 @@ function Hero() {
                 <h1 className='text-[64px] w-[600px] font-bold leading-[80px] max-md:w-[700px] max-md:text-[52px] max-md:leading-[60px] max-[1080px]:w-[550px] max-[660px]:text-[44px] max-[660px]'>{sliderData.title}</h1>
                 <p className='font-normal py-5'>O retorno de Lilith traz uma era de escuridão e sofrimento</p>
                 <div className='flex gap-2'>
-                    <button className='flex flex-row gap-2 w-auto mt-3 bg-blue border-blue'><UilUser />{sliderData.button}</button>
+                    <button className='flex flex-row gap-2 w-auto mt-3 bg-blue border-blue'>asdsadasd{sliderData.button}</button>
                     <button className='flex flex-row gap-2 w-auto mt-3 md:hidden'>Trailer</button>
                 </div>
             </div>

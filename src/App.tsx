@@ -1,5 +1,5 @@
 import './index.css'
-import Hero from './pages/main/Hero/Hero'
+import Hero from './pages/main/HeroSection/Hero'
 import Games from './pages/main/Games/Games'
 import Down from './pages/main/Download/Down'
 
@@ -13,7 +13,7 @@ function App() {
       <QueryClientProvider client={client}>
         <Hero />
         <Games />
-        {/*<Down />*/}
+        <Down />
       </QueryClientProvider>
     </div>
   )
