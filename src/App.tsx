@@ -12,8 +12,6 @@ function App() {
     <div>
       <QueryClientProvider client={client}>
         <Hero />
-        <Games />
-        <Down />
       </QueryClientProvider>
     </div>
   )

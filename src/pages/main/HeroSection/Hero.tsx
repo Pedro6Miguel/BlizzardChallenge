@@ -53,11 +53,11 @@ function Hero() {
                 <ul className='flex gap-10 pl-32 items-center text-white max-md:hidden'>
                     <li className='flex cursor-pointer items-center gap-2' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos<span>{open ? <img src={ArrowVectorBlue} alt="" /> : <img src={ArrowVector} alt="" />}</span></li>
                     <div id='gradient' className={open ? 'absolute top-[7rem] left-0 h-[540px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
-                        <div className='grid grid-cols-6 gap-[100px]'>
+                        <div className='grid grid-cols-6 gap-[100px] px-[100px]'>
                             {GAMES_DROPDOWN.map((data, i) =>(
                                 <div key={data.id} className='flex flex-col items-center gap-[10px] cursor-pointer'>
                                     <img className='h-[80px] w-[80px]' src={data.image} alt="" />
-                                    <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
+                                    <p className='text-text font-normal text-center text-[14px] '>{data.name}</p>
                                 </div>
                             ))}
                         </div>
@@ -100,36 +100,11 @@ function Hero() {
             </div>
         </nav>
         <div id='gradient' className={navOpen ? 'text-white absolute top-0 w-[100%] h-[656px] mt-28 z-10 flex flex-col justify-center gap-16 items-center md:hidden' : 'hidden'}>
-            <li className='flex cursor-pointer items-center gap-2' onClick={() => {setOpen(!open); setEsportsOpen(false)}}>Jogos <span className={open ? 'rotate-180 transition-all' : 'transition-all'}>{esportsOpen ? <img src={ArrowVectorBlue} alt="" /> : <img src={ArrowVector} alt="" />}</span></li>
-                    <div id='gradient' className={open ? 'absolute top-0 left-0 h-[656px] w-[100%] z-10 flex pt-[100px] items-center flex-col' : 'hidden'}>
-                        <div className='grid grid-cols-6 gap-[100px]'>
-                            {GAMES_DROPDOWN.map((data, i) =>(
-                                <div key={data.id} className='flex flex-col items-center gap-[10px] cursor-pointer'>
-                                    <img className='h-[80px] w-[80px]' src={data.image} alt="" />
-                                    <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className='w-[100%] h-[90px] bg-dropdown absolute bottom-[0] flex items-center justify-center gap-32'>
-                            <li className='flex items-center gap-4 cursor-pointer'><img className='w-[10px] h-[10px]' src={BlueDots} alt="" /> Ver todos jogos</li>
-                            <li className='flex items-center gap-4 cursor-pointer'><img src={LogoIcon} alt="" /> Aplicativo Battle.net</li>
-                            <li className='flex items-center gap-4 cursor-pointer'><img className='w-[22px] h-[22px]' src={DownloadIcon} alt="" /> Downloads</li>
-                            <li className='flex items-center gap-4 cursor-pointer'><img src={Chat} alt="" /> Fóruns dos jogos</li>
-                        </div>
-                    </div>
-                    <li className='flex cursor-pointer items-center gap-2' onClick={() => {setEsportsOpen(!esportsOpen); setOpen(false)}}>Esports <span className={esportsOpen ? 'rotate-180 transition-all' : 'transition-all'}>{esportsOpen ? <img src={ArrowVectorBlue} alt="" /> : <img src={ArrowVector} alt="" />}</span></li>
+            <li className='flex cursor-pointer items-center gap-2'>Jogos</li>
+                    <div id='gradient' className={open ? 'absolute top-0 left-0 h-[656px] w-[100%] z-10 flex pt-[100px] items-center flex-col' : 'hidden'}></div>
+                    <li className='flex cursor-pointer items-center gap-2'>Esports</li>
                     <div id='gradient' className={esportsOpen ? 'absolute top-0 left-0 h-[656px] w-[100%] z-10 flex justify-center items-center flex-col' : 'hidden'}>
-                        <div className='grid grid-cols-5 gap-[100px]'>
-                            {ESPORTS_DROPDOWN.map((data, i) =>(
-                                <div key={data.id} className='flex flex-col items-center gap-[10px] cursor-pointer pb-[80px]'>
-                                    <img src={data.image} alt="" />
-                                    <p className='text-text font-normal text-center text-[14px]'>{data.name}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className='w-[100%] h-[90px] bg-dropdown absolute bottom-0 flex items-center justify-center gap-32'>
-                            <li className='flex items-center gap-3 cursor-pointer'><img className='' src={Tournaments} alt="" />Torneios da comunidade</li>
-                        </div>
+                        
                     </div>
                     <li className='cursor-pointer'>Loja</li>
                     <li className='cursor-pointer'>Notícias</li>
@@ -146,10 +121,10 @@ function Hero() {
             </div>
 
             <div className='pl-36 gap-6 max-md:pl-24'> 
-                <h1 className='text-[64px] w-[600px] font-bold leading-[80px] max-md:w-[700px] max-md:text-[52px] max-md:leading-[60px] max-[1080px]:w-[550px] max-[660px]:text-[44px] max-[660px]'>{sliderData.title}</h1>
+                <h1 className='text-[64px] w-[600px] font-bold leading-[80px] max-md:w-[700px] max-md:text-[52px] max-md:leading-[60px] max-[1080px]:w-[550px] max-[660px]:text-[44px]'>{sliderData.title}</h1>
                 <p className='font-normal py-5'>O retorno de Lilith traz uma era de escuridão e sofrimento</p>
                 <div className='flex gap-2'>
-                    <button className='flex flex-row gap-2 w-auto mt-3 bg-blue border-blue'>asdsadasd{sliderData.button}</button>
+                    <button className='flex flex-row gap-2 w-auto mt-3 bg-blue border-blue'>{sliderData.button}</button>
                     <button className='flex flex-row gap-2 w-auto mt-3 md:hidden'>Trailer</button>
                 </div>
             </div>
